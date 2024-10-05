@@ -27,7 +27,7 @@ jobs:
         - name: Deploy Web
           uses: peaceiris/actions-gh-pages@v4
           with:
-              PERSONAL_TOKEN: ${{ secrets. TOKEN }}
+              PERSONAL_TOKEN: ${{ secrets. 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 }}
               EXTERNAL_REPOSITORY: alpapam
               PUBLISH_BRANCH: main
               PUBLISH_DIR: ./public
