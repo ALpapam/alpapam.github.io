@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 防止页面出现滚动条，因为视频可能撑开页面，让视频铺满可视区域 */
+}
+
+video#background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* 将视频置于底层，让计算器内容显示在上面 */
+}
+
+#calculator {
+  width: 300px;
+  margin: 50px auto; /* 让计算器在垂直方向有一定间距，看起来更美观 */
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #FFF0F5; /* 设置计算器本体的背景颜色为白色 */
+}
+
+#result {
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+#buttons button {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  font-size: 20px;
+}

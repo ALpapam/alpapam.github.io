@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简搜索</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://i0.hdslb.com/bfs/new_dyn/1f7f78194b9f2ecffdaea3c0f7912010672909313.png'); /* 替换为新背景图片 */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        .search-container {
+            width: 600px;
+            max-width: 90%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 450px;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
+
+        .search-box:focus {
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        .search-button {
+            margin-left: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background-color: #0078d4;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            text-rendering: optimizeLegibility;
+            box-sizing: border-box;
+        }
+
+        .search-button:hover {
+            background-color: #006cbd;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 480px) {
+            .search-container {
+                flex-direction: column;
+            }
+            .search-box, .search-button {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .search-button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" class="search-box" id="searchInput" placeholder="在Bing上搜索...">
+        <button class="search-button" onclick="performSearch()">搜索</button>
+    </div>
+
+    <script>
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value;
+            if (searchTerm.trim() !== '') {
+                const bingUrl = `https://www.bing.com/search?q=${encodeURIComponent(searchTerm)}`;
+                window.location.href = bingUrl;
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

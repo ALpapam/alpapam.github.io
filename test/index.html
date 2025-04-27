@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="bgv.mp4" type="video/mp4">
+    <!-- 如果有其他格式的视频备用（比如 webm 格式兼容性更好），可以继续添加如下 source 标签 -->
+    <!-- <source src="your_video.webm" type="video/webm"> -->
+    您的浏览器不支持视频播放。
+  </video>
+  <div id="calculator">
+    <input type="text" id="result" readonly>
+    <div id="buttons">
+      <button class="operator" onclick="appendToResult('7')">7</button>
+      <button class="operator" onclick="appendToResult('8')">8</button>
+      <button class="operator" onclick="appendToResult('9')">9</button>
+      <button class="operator" onclick="appendToResult('+')">+</button>
+      <button class="operator" onclick="appendToResult('4')">4</button>
+      <button class="operator" onclick="appendToResult('5')">5</button>
+      <button class="operator" onclick="appendToResult('6')">6</button>
+      <button class="operator" onclick="appendToResult('-')">-</button>
+      <button class="operator" onclick="appendToResult('1')">1</button>
+      <button class="operator" onclick="appendToResult('2')">2</button>
+      <button class="operator" onclick="appendToResult('3')">3</button>
+      <button class="operator" onclick="appendToResult('*')">*</button>
+      <button class="operator" onclick="appendToResult('0')">0</button>
+      <button class="operator" onclick="appendToResult('.')">.</button>
+      <button class="operator" onclick="calculate()">=</button>
+      <button class="operator" onclick="appendToResult('/')">/</button>
+      <button class="operator" onclick="clearResult()">C</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
